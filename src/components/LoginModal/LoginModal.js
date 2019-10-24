@@ -14,19 +14,19 @@ const LoginModal = ({
     // Open Google login page
     // Upon successful login, a cookie session will be stored in the client
 
-    window.open(`http://${domain}:4000/auth/google`, '_self');
+    window.open(`${domain}/auth/google`, '_self');
   };
 
   const handleFacebookSignInClick = () => {
-    window.open(`http://${domain}:4000/auth/facebook`, '_self');
+    window.open(`${domain}/auth/facebook`, '_self');
   };
 
   const handleGithubSignInClick = () => {
-    window.open(`http://${domain}:4000/auth/github`, '_self');
+    window.open(`${domain}/auth/github`, '_self');
   };
 
   const handleTwitterSignInClick = () => {
-    window.open(`http://${domain}:4000/auth/twitter`, '_self');
+    window.open(`${domain}/auth/twitter`, '_self');
   };
 
   if (showModal) {
@@ -69,7 +69,7 @@ const LoginModal = ({
                 Sign In with local ID
               </p>
               <form
-                action={`http://${domain}:4000/auth/local/login`}
+                action={`${domain}/auth/local/login`}
                 method='POST'
               >
                 <label>
@@ -125,7 +125,7 @@ const LoginModal = ({
                 Please fill in the forms below to sign up
               </p>
               <form
-                action={`http://${domain}:4000/auth/local/register`}
+                action={`${domain}/auth/local/register`}
                 method='POST'
               >
                 <label>

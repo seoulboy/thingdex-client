@@ -39,7 +39,7 @@ export const deleteLocationSuccess = locationId => ({
 export const fetchLocations = (userId, roomId) => {
   return dispatch => {
     dispatch(fetchLocationsBegin());
-    return fetch(`http://${domain}:4000/api/users/${userId}/rooms/${roomId}/locations`, {
+    return fetch(`${domain}/api/users/${userId}/rooms/${roomId}/locations`, {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -60,7 +60,7 @@ export const fetchLocations = (userId, roomId) => {
 export const addLocation = (formData, userId, roomId) => {
   return dispatch => {
     return fetch(
-      `http://${domain}:4000/api/users/${userId}/rooms/${roomId}/locations/`,
+      `${domain}/api/users/${userId}/rooms/${roomId}/locations/`,
       {
         method: 'POST',
         body: formData,
@@ -76,7 +76,7 @@ export const addLocation = (formData, userId, roomId) => {
 export const deleteLocation = (userId, roomId, locationId) => {
   return dispatch => {
     return fetch(
-      `http://${domain}:4000/api/users/${userId}/rooms/${roomId}/locations/${locationId}`,
+      `${domain}/api/users/${userId}/rooms/${roomId}/locations/${locationId}`,
       {
         method: 'DELETE',
         credentials: 'include',

@@ -7,6 +7,7 @@ import rootReducer from './reducers/rootReducer';
 import App from './components/App';
 import './index.css';
 import 'antd/dist/antd.css';
+require('dotenv').config();
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 

@@ -4,7 +4,7 @@ export const searchItem = async (searchString, userId) => {
   if (searchString.length) {
     // TODO: query string...
     const data = await fetch(
-      `http://${domain}:4000/search_item/${userId}/${searchString}`,
+      `${domain}/search_item/${userId}/${searchString}`,
       {
         method: 'GET',
         credentials: 'include',

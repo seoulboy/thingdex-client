@@ -1,15 +1,7 @@
-// var domain =
-//   process.env.NODE_ENV === 'development' ? 'localhost' : '192.168.0.36';
+const localIPAddress = '192.168.0.47'
+const cloudDomain = 'http://thingdex-env.v3jdr8esif.ap-northeast-2.elasticbeanstalk.com'
+const localDomain = `http://${localIPAddress}:4000`
 
-var domain = '192.168.0.36';
-
-// const publicIp = require('public-ip');
-
-// var domain;
-// const getDomain = async () => {
-//   domain = await publicIp.v4();
-// };
-
-// getDomain();
+const domain = process.env.REACT_APP_NODE_ENV === 'development' ? localDomain : cloudDomain;
 
 module.exports = { domain };

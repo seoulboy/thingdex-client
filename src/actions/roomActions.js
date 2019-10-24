@@ -55,7 +55,7 @@ export const setCurrentRoom = room => ({
 
 export const addRoom = (formData, userId) => {
   return dispatch => {
-    return fetch(`http://${domain}:4000/api/users/${userId}/rooms/`, {
+    return fetch(`${domain}/api/users/${userId}/rooms/`, {
       method: 'POST',
       body: formData,
     })
@@ -69,7 +69,7 @@ export const addRoom = (formData, userId) => {
 
 export const deleteRoom = (userId, roomId) => {
   return dispatch => {
-    return fetch(`http://${domain}:4000/api/users/${userId}/rooms/${roomId}`, {
+    return fetch(`${domain}/api/users/${userId}/rooms/${roomId}`, {
       method: 'DELETE',
       credentials: 'include',
       headers: {
@@ -90,7 +90,7 @@ export const deleteRoom = (userId, roomId) => {
 export const fetchRoom = (userId, roomId) => {
   return dispatch => {
     dispatch(fetchRoomBegin());
-    return fetch(`http://${domain}:4000/api/users/${userId}/rooms/${roomId}`, {
+    return fetch(`${domain}/api/users/${userId}/rooms/${roomId}`, {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -111,7 +111,7 @@ export const fetchRoom = (userId, roomId) => {
 export const fetchRooms = userId => {
   return dispatch => {
     dispatch(fetchRoomsBegin());
-    return fetch(`http://${domain}:4000/api/users/${userId}/rooms/`, {
+    return fetch(`${domain}/api/users/${userId}/rooms/`, {
       method: 'GET',
       credentials: 'include',
       headers: {

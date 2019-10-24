@@ -16,7 +16,7 @@ const LocationForm = props => {
         var formData = new FormData(locationForm);
         formData.append('image', blob);
         fetch(
-          `http://${domain}:4000/api/users/${userId}/rooms/${roomId}/locations/`,
+          `${domain}/api/users/${userId}/rooms/${roomId}/locations/`,
           {
             method: 'POST',
             body: formData,

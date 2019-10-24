@@ -22,7 +22,7 @@ export const fetchUser = () => {
   return dispatch => {
     dispatch(fetchUserBegin());
 
-    return fetch(`http://${domain}:4000/auth/login/success`, {
+    return fetch(`${domain}/auth/login/success`, {
       method: 'GET',
       credentials: 'include',
       headers: {

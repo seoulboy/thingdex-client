@@ -16,6 +16,7 @@ const HomePage = props => {
 
   const searchInput = useRef(null);
 
+  console.log('domain', domain);
   useEffect(() => {
     props.checkLogin();
   }, []);
@@ -43,7 +44,7 @@ const HomePage = props => {
   };
 
   const handleLogoutClick = async () => {
-    await window.open(`http://${domain}:4000/auth/logout`, '_self');
+    await window.open(`${domain}/auth/logout`, '_self');
     props.logoutUser();
   };
 
