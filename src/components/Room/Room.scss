@@ -1,0 +1,53 @@
+.outermost-container {
+  .room-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .room-header {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .room-image {
+      height: 240px;
+      margin: 20px;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .location-name-label {
+        display: flex;
+        justify-content: center;
+      }
+      .image-upload-label {
+        text-align: center;
+        #preview-image {
+          height: 240px;
+        }
+        #location-preview {
+          display: none;
+        }
+        .add-new-location-text {
+          border: 1px solid black;
+          padding: 10px;
+        }
+      }
+      #location-image-upload-input {
+        display: none;
+      }
+      .field {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        label {
+          width: 280px;
+        }
+      }
+    }
+  }
+}

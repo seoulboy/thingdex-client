@@ -1,0 +1,41 @@
+.locations-container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+
+  .location-container {
+    position: relative;
+
+    .location-image {
+      width: 320px;
+      height: 240px;
+      margin: 20px;
+      filter: drop-shadow(8px 8px 10px gray);
+    }
+
+    .delete-button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      cursor: pointer;
+      transition-duration: 200ms;
+      &:hover {
+        color: crimson;
+        transform: scale(1.2);
+      }
+    }
+
+    .location-name {
+      position: absolute;
+      left: 45%;
+    }
+
+    .location-date-created {
+      position: absolute;
+      top: 5px;
+      right: 8%;
+      font-size: 10px;
+    }
+  }
+}

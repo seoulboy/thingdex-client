@@ -1,0 +1,38 @@
+.outermost-container {
+  height: 80vh;
+  width: 100%;
+  .home-text {
+    text-align: center;
+    .room-form-container {
+      display: flex;
+      flex-wrap: wrap-reverse;
+      flex-direction: row-reverse;
+      justify-content: space-evenly;
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .image-upload-label {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          margin: 30px;
+          padding: 20px;
+          border: 1px dotted black;
+        }
+      }
+
+      #image-upload {
+        display: none;
+      }
+    }
+  }
+  .signin-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .signin-row {
+    }
+  }
+}
