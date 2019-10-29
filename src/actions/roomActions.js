@@ -58,6 +58,7 @@ export const addRoom = (formData, userId) => {
     return fetch(`${domain}/api/users/${userId}/rooms/`, {
       method: 'POST',
       body: formData,
+      credentials: 'include',
     })
       .then(handleErrors)
       .then(room => {

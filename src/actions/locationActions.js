@@ -64,6 +64,7 @@ export const addLocation = (formData, userId, roomId) => {
       {
         method: 'POST',
         body: formData,
+        credentials: 'include',
       }
     ).then(handleErrors)
      .then(location => {

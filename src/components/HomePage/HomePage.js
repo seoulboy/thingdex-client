@@ -171,6 +171,9 @@ const HomePage = props => {
                       />
                     </label>
                   )}
+                  {showRoomSubmitBtn && (
+                      <img id='preview' src={previewSrc} alt='' />
+                  )}
 
                   <label className='image-upload-label' htmlFor='image-upload'>
                     <Icon
@@ -178,9 +181,6 @@ const HomePage = props => {
                       type='camera'
                       theme='filled'
                     />
-                    {showRoomSubmitBtn && (
-                      <img id='preview' src={previewSrc} alt='' />
-                    )}
                   </label>
 
                   {showRoomSubmitBtn && (

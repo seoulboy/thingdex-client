@@ -36,6 +36,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        #room-name-input {
+          margin-top: 20px;
+        }
         .image-upload-label {
           display: flex;
           flex-wrap: wrap;
