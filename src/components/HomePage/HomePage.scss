@@ -1,7 +1,31 @@
 .outermost-container {
-  height: 80vh;
+  background-color: #FAF0DC;
+  height: 100vh;
   width: 100%;
+  font-family: 'Kalam', cursive;
   .home-text {
+    .welcome-text {
+      font-size: 25px;
+    }
+    .header-menu {
+      position: relative;
+      position: -webkit-sticky;
+      position: sticky;
+      .home-button {
+        position: absolute;
+        top: 36%;
+        left: 7%;
+        font-size: 25px;
+        color: grey;
+      }
+      .sign-out-button {
+        position: absolute;
+        top: 36%;
+        right: 7%;
+        font-size: 25px;
+        color: grey;
+      }
+    }
     text-align: center;
     .room-form-container {
       display: flex;
@@ -16,9 +40,21 @@
           display: flex;
           flex-wrap: wrap;
           justify-content: space-evenly;
-          margin: 30px;
-          padding: 20px;
-          border: 1px dotted black;
+          border: 1px dotted white;
+          border-radius: 50px;
+          position: fixed;
+          position: absolute;
+          bottom: 10%;
+          background: white;
+
+          .open-camera {
+            padding: 15px;
+            border: 1px dotted white;
+            border-radius: 50px;
+            font-size: 30px;
+            background: #cfb997;
+            color: white;
+          }
         }
       }
 
@@ -33,6 +69,12 @@
     justify-content: center;
     align-items: center;
     .signin-row {
+      text-align: center;
     }
   }
+}
+
+h1 {
+  font-size: 50px;
+  font-family: 'Caveat';
 }

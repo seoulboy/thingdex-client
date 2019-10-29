@@ -4,7 +4,7 @@ import LocationList from '../LocationList';
 import { Link } from 'react-router-dom';
 import './Room.scss';
 import { Icon } from 'antd';
-// import { domain } from '../../constants';
+import { domain } from '../../constants';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
 
 const Room = props => {
@@ -16,13 +16,13 @@ const Room = props => {
   const [showCanvasContainer, setShowCanvasContainer] = useState(false);
 
   const loadingIcon = (
-    <div>
+    <div className='loading-room-icon'>
       Loading Room... <Icon type='loading' />
     </div>
   );
 
   const predictLoadingIcon = (
-    <div>
+    <div className='loading-predict-icon'>
       Predicting... <Icon type='loading' />
     </div>
   );
@@ -197,24 +197,35 @@ const Room = props => {
       )
     );
   };
+
+  const handleLogoutClick = async () => {
+    await window.open(`${domain}/auth/logout`, '_self');
+  };
   return (
     <div className='outermost-container'>
-      <Link to='/'>Home</Link>
       <div className='room-container'>
-        <div className='room-header'>
-          {props.isLoadingRoom ? (
-            loadingIcon
-          ) : (
-            <>
+        {props.isLoadingRoom ? (
+          loadingIcon
+        ) : (
+          <>
+            <div className='room-header'>
+              <Link to='/'>
+                <Icon className='home-button' type='home' />
+              </Link>
               <h2>Currently viewing: {props.room.name}</h2>
-              <img
-                className='room-image'
-                src={props.room.imageUrl}
-                alt='room-img'
+              <Icon
+                className='sign-out-button'
+                onClick={() => handleLogoutClick()}
+                type='logout'
               />
-            </>
-          )}
-        </div>
+            </div>
+            <img
+              className='room-image'
+              src={props.room.imageUrl}
+              alt='room-img'
+            />
+          </>
+        )}
         <form
           className='location-form'
           onSubmit={event => {
@@ -231,7 +242,7 @@ const Room = props => {
             {!predictLoading &&
               !showLocationSubmitBtn &&
               !props.isLoadingRoom && (
-                <p className='add-new-location-text'>Add New Location</p>
+                <p className='add-new-location-text'>Add New Location +</p>
               )}
             {predictLoading && predictLoadingIcon}
             {showCanvasContainer && <div className='canvas-container'></div>}
@@ -271,11 +282,13 @@ const Room = props => {
             type='file'
             accept='image/*'
             capture='camera'
-            onChange={async e => {
+            onChange={async e => { 
               handleImageResizing(e);
-
+              console.log('handleimage resizing done');
               await setPredictLoading(true);
+              console.log('setpredictloading done')
               await setShowCanvasContainer(true);
+              console.log('setshow canvas container done')
               await predictImg();
               await setShowLocationSubmitBtn(true);
               await setPredictLoading(false);

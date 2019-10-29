@@ -7,7 +7,7 @@ import { domain } from '../../constants';
 
 const LocationList = props => {
   const loadingIcon = (
-    <div>
+    <div className='loading-locations-icon'>
       Loading Locations... <Icon type='loading' />
     </div>
   );
@@ -27,7 +27,7 @@ const LocationList = props => {
   const renderedLocations = props.locations.map(location => {
     const dateCreated = moment(location.created).format('YYYY-MM-DD');
     const items = location.items.map((item, index) => (
-      <li key={item + index}>{item}</li>
+      <li className='each-item-location' key={item + index}>{item}</li>
     ));
     return (
       <div className='location-container' key={location.imageId}>
@@ -37,13 +37,16 @@ const LocationList = props => {
           onClick={() => handleDeleteLocation(location)}
         />
         <p className='location-name'>{location.name}</p>
+        <p className='location-date-created'>{dateCreated}</p>
         <img
           className='location-image'
           src={location.imageUrl}
           alt={location.name}
         />
-        <p className='location-date-created'>{dateCreated}</p>
+        <div>
         <ul className='items-list'>{items}</ul>
+
+        </div>
       </div>
     );
   });

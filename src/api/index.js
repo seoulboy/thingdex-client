@@ -2,7 +2,6 @@ import { domain } from '../constants';
 
 export const searchItem = async (searchString, userId) => {
   if (searchString.length) {
-    // TODO: query string...
     const data = await fetch(
       `${domain}/search_item/${userId}/${searchString}`,
       {
@@ -17,7 +16,7 @@ export const searchItem = async (searchString, userId) => {
     );
 
     const response = await data.json();
-
+    
     return response;
   }
 };

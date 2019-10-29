@@ -5,6 +5,8 @@ import LoginModal from '../LoginModal';
 import RoomList from '../RoomList';
 import { searchItem } from '../../api';
 import './HomePage.scss';
+import { Icon } from 'antd';
+import { Link } from 'react-router-dom';
 
 const HomePage = props => {
   const [showModal, setShowModal] = useState(false);
@@ -16,7 +18,6 @@ const HomePage = props => {
 
   const searchInput = useRef(null);
 
-  console.log('domain', domain);
   useEffect(() => {
     props.checkLogin();
   }, []);
@@ -45,7 +46,7 @@ const HomePage = props => {
 
   const handleLogoutClick = async () => {
     await window.open(`${domain}/auth/logout`, '_self');
-    props.logoutUser();
+    props.logout();
   };
 
   const handleSubmit = event => {
@@ -99,18 +100,32 @@ const HomePage = props => {
 
     const searchResultPromise = searchItem(searchString, props.user._id);
 
-    Promise.resolve(searchResultPromise).then(res => setSearchResultData(res));
+    Promise.resolve(searchResultPromise).then(res => {
+      console.log(res);
+      setSearchResultData(res);
+    });
   };
 
   return (
     <div className='outermost-container'>
       {props.authenticated ? (
         <div className='home-text'>
-          <span className='sign-out-button' onClick={handleLogoutClick}>
-            Sign out
-          </span>
-          <h2 className='welcome-text'>Welcome, {props.user.name}</h2>
-          <p onClick={() => setShowSearchResultList(false)}>Home</p>
+          <div className='header-menu'>
+            <Link to='/'>
+              <Icon
+                className='home-button'
+                onClick={() => setShowSearchResultList(false)}
+                type='home'
+              />
+            </Link>
+            <h1 id='header'>thingdex</h1>
+            <Icon
+              className='sign-out-button'
+              onClick={() => handleLogoutClick()}
+              type='logout'
+            />
+          </div>
+          <h3 className='welcome-text'>Welcome, {props.user.name}</h3>
           <input
             type='text'
             placeholder='search for an item!'
@@ -158,7 +173,11 @@ const HomePage = props => {
                   )}
 
                   <label className='image-upload-label' htmlFor='image-upload'>
-                    Click Here to Add Room!
+                    <Icon
+                      className='open-camera'
+                      type='camera'
+                      theme='filled'
+                    />
                     {showRoomSubmitBtn && (
                       <img id='preview' src={previewSrc} alt='' />
                     )}

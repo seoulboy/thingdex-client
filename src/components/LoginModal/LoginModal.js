@@ -50,35 +50,32 @@ const LoginModal = ({
               <div className='social-login-container'>
                 <>
                   <p onClick={handleGoogleSignInClick}>
-                    <Icon type='google-plus' className='social-auth-icon' />
+                    <Icon type='google-plus' className='social-auth-icon google-login' />
                   </p>
                   <p onClick={handleFacebookSignInClick}>
-                    <Icon type='facebook' className='social-auth-icon' />
+                    <Icon type='facebook' className='social-auth-icon facebook-login' />
                   </p>
                   <p onClick={handleGithubSignInClick}>
-                    <Icon type='github' className='social-auth-icon' />
+                    <Icon type='github' className='social-auth-icon github-login' />
                   </p>
                   <p onClick={handleTwitterSignInClick}>
-                    <Icon type='twitter' className='social-auth-icon' />
+                    <Icon type='twitter' className='social-auth-icon twitter-login' />
                   </p>
                 </>
               </div>
-              <p>
+              <p className='middle-text-modal'>
                 Or
                 <br />
                 Sign In with local ID
               </p>
-              <form
-                action={`${domain}/auth/local/login`}
-                method='POST'
-              >
+              <form action={`${domain}/auth/local/login`} method='POST'>
                 <label>
                   Email:
                   <br />
                   <input
                     type='email'
                     name='email'
-                    placeholder='email'
+                    placeholder='enter email'
                     required
                   />
                 </label>
@@ -89,7 +86,7 @@ const LoginModal = ({
                   <input
                     type='password'
                     name='password'
-                    placeholder='password'
+                    placeholder='enter password'
                     min='6'
                     max='18'
                     required
@@ -124,10 +121,7 @@ const LoginModal = ({
               <p className='modal-text'>
                 Please fill in the forms below to sign up
               </p>
-              <form
-                action={`${domain}/auth/local/register`}
-                method='POST'
-              >
+              <form action={`${domain}/auth/local/register`} method='POST'>
                 <label>
                   Name:
                   <br />

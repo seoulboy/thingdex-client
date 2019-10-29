@@ -1,14 +1,49 @@
 .outermost-container {
+  background-color: #faf0dc;
+  .home-button {
+    position: absolute;
+    top: 36%;
+    left: 7%;
+    font-size: 25px;
+    color: grey;
+  }
   .room-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    .loading-room-icon {
+      font-size: 30px;
+      margin: 80px auto;
+    }
 
     .room-header {
       display: flex;
       justify-content: space-evenly;
       flex-direction: column;
       text-align: center;
+      top: 0;
+      position: -webkit-sticky;
+      position: sticky;
+      background-color: #faf0dc;
+
+      .home-button {
+        position: absolute;
+        top: 36%;
+        left: 7%;
+        font-size: 25px;
+        color: grey;
+      }
+      h2 {
+        padding-top: 24px;
+      }
+      .sign-out-button {
+        position: absolute;
+        top: 36%;
+        right: 7%;
+        font-size: 25px;
+        color: grey;
+      }
     }
 
     .room-image {
@@ -35,6 +70,7 @@
         .add-new-location-text {
           border: 1px solid black;
           padding: 10px;
+          font-size: 18px;
         }
       }
       #location-image-upload-input {
@@ -50,4 +86,9 @@
       }
     }
   }
+}
+
+.loading-predict-icon {
+  font-size: 30px;
+  margin: 80px auto;
 }

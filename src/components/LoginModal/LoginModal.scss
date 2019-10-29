@@ -6,22 +6,26 @@
   height: 100%;
 
   .modal-main {
-    color: white;
     position: fixed;
-    background: rgba(0, 0, 0, 0.9);
+    color: black;
+    background: #faf0dc;
+    filter: brightness(90%);
     width: 40%;
-    min-width: 303px;
+    min-width: 340px;
     height: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: default;
     padding: 3%;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid black;
 
     .modal-header-icon {
       font-size: 40px;
-      color: cornflowerblue;
-      filter: brightness(150%);
+      color: #FAF0DC;
+      filter: brightness(50%);
     }
 
     .modal-text {
@@ -33,6 +37,8 @@
       top: 3px;
       font-size: 25px;
       transition-duration: 300ms;
+      color: #FAF0DC;
+      filter: brightness(50%);
       &:hover {
         color: red;
       }
@@ -41,17 +47,43 @@
     .social-login-container {
       display: flex;
       justify-content: space-evenly;
+
+      .google-login {
+        color: coral;
+        filter: brightness(90%);
+        &:focus {
+          transform: scale(1.8);
+          color: coral;
+          filter: brightness(150%);
+        }
+      }
+      .facebook-login {
+        color: blue;
+        filter: brightness(70%);
+        &:focus {
+          transform: scale(1.8);
+          color: blue;
+          filter: brightness(150%);
+        }
+      }
+
+      .twitter-login {
+        color: lightskyblue;
+        &:focus {
+          transform: scale(1.8);
+          color: lightskyblue;
+          filter: brightness(150%);
+        }
+      }
       .social-auth-icon {
         cursor: pointer;
         font-size: 30px;
         transition-duration: 200ms;
-
-        &:hover {
-          transform: scale(1.8);
-          color: cornflowerblue;
-          filter: brightness(150%);
-        }
       }
+    }
+
+    .middle-text-modal {
+      font-size: 17px;
     }
 
     form {
@@ -71,7 +103,7 @@
         font-size: 19px;
         background-color: cornflowerblue;
         filter: brightness(120%);
-
+        color: white;
         &:hover {
           transform: scale(1.05);
           filter: brightness(130%);
@@ -85,7 +117,7 @@
 .show-sign-in-form {
   cursor: pointer;
   color: cornflowerblue;
-  filter: brightness(150%);
+  filter: brightness(120%);
   &:hover {
     transition-duration: 300ms;
     transform: scale(1.1);
