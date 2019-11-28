@@ -9,6 +9,7 @@ import { Icon } from 'antd';
 import { Link } from 'react-router-dom';
 
 const HomePage = props => {
+  console.log('HomePage', props.count);
   const [showModal, setShowModal] = useState(false);
   const [showRegisterForm, setShowRegisterForm] = useState(false);
   const [showSearchResultList, setShowSearchResultList] = useState(false);
@@ -172,9 +173,8 @@ const HomePage = props => {
                     </label>
                   )}
                   {showRoomSubmitBtn && (
-                      <img id='preview' src={previewSrc} alt='' />
+                    <img id='preview' src={previewSrc} alt='' />
                   )}
-
                   <label className='image-upload-label' htmlFor='image-upload'>
                     <Icon
                       className='open-camera'
@@ -182,11 +182,9 @@ const HomePage = props => {
                       theme='filled'
                     />
                   </label>
-
                   {showRoomSubmitBtn && (
                     <button type='submit'>Add To My Room</button>
                   )}
-
                   <input
                     id='image-upload'
                     name='image'

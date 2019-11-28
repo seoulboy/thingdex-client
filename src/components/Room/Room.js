@@ -8,6 +8,7 @@ import { domain } from '../../constants';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
 
 const Room = props => {
+  console.log('Room', props.count)
   const { userId, roomId } = useParams();
   const [predictLoading, setPredictLoading] = useState(false);
   const [previewSrc, setPreviewSrc] = useState('//:0');
