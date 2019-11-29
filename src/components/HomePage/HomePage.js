@@ -181,6 +181,7 @@ const HomePage = props => {
                       type='camera'
                       theme='filled'
                     />
+                    <span>Click here to add a room</span>
                   </label>
                   {showRoomSubmitBtn && (
                     <button type='submit'>Add To My Room</button>
