@@ -33,7 +33,7 @@ const loginReducer = (state = initalState, action) => {
         ...state,
         loading: false,
         error: action.payload.error,
-        authenticated: true,
+        authenticated: false,
       };
     case LOGOUT_USER:
       return {
